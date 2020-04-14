@@ -1,14 +1,5 @@
 # Starter pipeline
-- task: WhiteSource@19
-  inputs:
-    cwd: '$(Build.SourcesDirectory)'
-    extensions: '.js'
-    checkPolicies: 'SEND_ALERTS'
-    productName: 'AzureTest'
-    projectRule: 'projectName'
-    projectName: 'PipelineTest'
-    forceCheckAllDependencies: true
-    WhiteSourceService: 'WhiteSource Endpoint'
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -27,3 +18,15 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+
+- task: WhiteSource@19
+  inputs:
+    cwd: '$(Build.SourcesDirectory)'
+    extensions: '.js'
+    checkPolicies: 'SEND_ALERTS'
+    productName: 'AzureTest'
+    projectRule: 'projectName'
+    projectName: 'PipelineTest'
+    forceCheckAllDependencies: true
+    WhiteSourceService: 'WhiteSource Endpoint'
